@@ -1,14 +1,16 @@
 import {useRouter} from 'next/router';
+import PostItem from '../../../components/post/PostItem';
 
-export default function RandomGame() {
+export default function SinglePost() {
     const router = useRouter();
     console.log(router.query.postId);
-    const postId = router.query.postId;
+    const {postId} = router.query;
     
     return (
-        <div>
-            <h1>postId is {postId}</h1>
-            
-        </div>
+        <PostItem 
+            postId={postId}
+            postTitle={"postTitle DEMO"}
+            postDescription={"postDescription DEMOOOOOOOO OOOOOOOOOOO OOOOO"}
+        />
     )
 }

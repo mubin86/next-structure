@@ -7,7 +7,7 @@ export default function MainNavigation() {
             {/* hello people this is the Navbar */}
             <header>
                 <nav>
-                    <ul className="flex justify-evenly p-4 text-3xl">
+                    <ul className="mb-7 flex justify-evenly p-4 text-3xl">
                         <li>
                             <Link href='/'>All Posts</Link>
                         </li>
