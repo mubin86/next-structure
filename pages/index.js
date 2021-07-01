@@ -1,9 +1,13 @@
+import Layout from "../components/layout/Layout";
+import PostPage from "./post";
 
 
 export default function index() {
   return (
     <div>
-      The Initial Home Page
+      <Layout>
+        <PostPage />
+      </Layout>
     </div>
   )
 }
