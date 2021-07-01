@@ -2,22 +2,30 @@
 
 export default function NewPost() {
     return (
-        <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-  <div className="relative py-3 w-11/12 max-w-xl sm:mx-auto">
-    <div className="relative p-8 bg-white shadow-sm sm:rounded-xl">
-      <form className="w-full">
-        <div className="mb-5 relative">
-          <input type="email" id="email" className="peer pt-8 border border-gray-200 focus:outline-none rounded-md focus:border-gray-500 focus:shadow-sm w-full p-3 h-16 placeholder-transparent" placeholder="name@example.com" autoComplete="off" />
-          <label htmlFor="email" className="peer-placeholder-shown:opacity-100   opacity-75 peer-focus:opacity-75 peer-placeholder-shown:scale-100 scale-75 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 -translate-y-3 peer-focus:-translate-y-3 peer-placeholder-shown:translate-x-0 translate-x-1 peer-focus:translate-x-1 absolute top-0 left-0 px-3 py-5 h-full pointer-events-none transhtmlForm origin-left transition-all duration-100 ease-in-out">Email address</label>
+      <div className="min-h-screen flex items-center rounded justify-center bg-blu-400">
+
+        <div className="bg-white p-16 rounded shadow-2xl w-2/3">
+
+          <h2 className="text-3xl font-bold mb-4 text-purple-800">Create Your Post</h2>
+
+          <form className="space-y-6">
+
+            <div>
+              <label className="block mb-2 font-bold">Post Title</label>
+              <input type="text" className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-500" />
+            </div>
+
+            <div>
+              <label className="block mb-2 font-bold">Post Description</label>
+              <input type="text" className="w-full border-2 border-gray-400 p-3 rounded outline-none focus:border-purple-500" />
+            </div>
+
+            <button className="block w-full bg-red-400 py-4">Submit</button>
+
+          </form>
+
         </div>
-        <div className="mb-5 relative">
-          <input type="password" id="password" className="peer pt-8 border border-gray-200 focus:outline-none rounded-md focus:border-gray-500 focus:shadow-sm w-full p-3 h-16 placeholder-transparent" placeholder="password" autoComplete="off" />
-          <label htmlFor="password" className="peer-placeholder-shown:opacity-100   opacity-75 peer-focus:opacity-75 peer-placeholder-shown:scale-100 scale-75 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 -translate-y-3 peer-focus:-translate-y-3 peer-placeholder-shown:translate-x-0 translate-x-1 peer-focus:translate-x-1 absolute top-0 left-0 px-3 py-5 h-full pointer-events-none transform origin-left transition-all duration-100 ease-in-out">Password</label>
-        </div>
-        <button onClick="javascript:void(0);" className="w-full bg-indigo-600 text-white p-3 rounded-md">Submit</button>
-      </form>
-    </div>
-  </div>
-</div>
+      </div>
+
     )
 }
