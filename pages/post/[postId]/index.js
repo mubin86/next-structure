@@ -13,7 +13,6 @@ export default function SinglePost() {
         //     postTitle={"postTitle DEMO"}
         //     postDescription={"postDescription DEMOOOOOOOO OOOOOOOOOOO OOOOO"}
         // />
-
         <PostDetail 
             postId={postId}
             postTitle={"postTitle DEMO"}
