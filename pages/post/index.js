@@ -1,22 +1,12 @@
-import { Fragment } from 'react'
-import Link from 'next/link'
-import PostList from '../../components/post/PostList'
 
-const posts = [
-    {
-        id: 3,
-        title: "first title",
-        description: "this is the first description........."
-    },
-    {
-        id: 4,
-        title: "second title",
-        description: "this is the second description........."
-    }
+// import Link from 'next/link'
+import PostList from '../../components/post/PostList';
+import {GetStaticProps} from 'next';
 
-]
 
-const PostPage = () => {
+
+
+export default function PostPage({posts}) {
     return (
         // <Fragment>
         // <h1>
@@ -44,4 +34,4 @@ const PostPage = () => {
     );
 }
 
-export default PostPage;
+
