@@ -43,11 +43,12 @@ export default function PostPage({post}) {
     );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context) { //works on build time
     console.log("hello from get static props", context);
     return {
         props: {
             post: DUMMY_POSTS
-        }
+        },
+        revalidate: 3 //****regenearted on the server in every 3 seconds if any request come in this page, so get the updated data after every 3 seconds****
     };
 }
