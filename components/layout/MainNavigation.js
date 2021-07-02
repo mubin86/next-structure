@@ -9,7 +9,7 @@ export default function MainNavigation() {
                 <nav>
                     <ul className="mb-7 flex justify-evenly p-4 text-3xl">
                         <li>
-                            <Link href='/'>All Posts</Link>
+                            <Link href='/post'>All Posts</Link>
                         </li>
                         <li> 
                             <Link href='/post/new-post'>Create New Post</Link>

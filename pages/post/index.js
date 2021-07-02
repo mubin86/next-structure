@@ -1,12 +1,21 @@
 
 // import Link from 'next/link'
 import PostList from '../../components/post/PostList';
-import {GetStaticProps} from 'next';
 
+const DUMMY_POSTS = [
+    {
+        id: 3,
+        title: "first title",
+        description: "this is the first description........."
+    },
+    {
+        id: 4,
+        title: "second title",
+        description: "this is the second description........."
+    }
+];
 
-
-
-export default function PostPage({posts}) {
+export default function PostPage({post}) {
     return (
         // <Fragment>
         // <h1>
@@ -28,10 +37,17 @@ export default function PostPage({posts}) {
         // </Fragment>
 
         <PostList 
-            posts={posts}
+            posts={post}
         />
         
     );
 }
 
-
+export async function getStaticProps(context) {
+    console.log("hello from get static props", context);
+    return {
+        props: {
+            post: DUMMY_POSTS
+        }
+    };
+}
