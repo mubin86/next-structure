@@ -43,25 +43,27 @@ export default function PostPage({post}) {
     );
 }
 
-// export async function getStaticProps(context) { //works on build time
-//     console.log("hello from get static props", context);
-//     return {
-//         props: {
-//             post: DUMMY_POSTS
-//         },
-//         revalidate: 3 //****regenearted on the server in every 3 seconds if any request come in this page, so get the updated data after every 3 seconds****
-//     };
-// }
-
-export async function getServerSideProps(context){ //****this will be run on the server after deployment in every incoming request on the fly****
-    //****8this function only work in the server, never client-side, so can useful for credential related matter because it will never expose outside the world*******
-    
-    const req = context.req; //****this can be useful for authentication staff etc......***
-    const res = context.res;
-    
+//specially useful for personal blog related project
+export async function getStaticProps(context) { //works on build time //**this will pre genrate a HTML file and stored and served by a CDN so it is realtively faster// 
+    console.log("hello from get static props", context);
     return {
-                props: {
-                    post: DUMMY_POSTS
-                }
-            };
+        props: {
+            post: DUMMY_POSTS
+        },
+        revalidate: 3 //****regenearted on the server in every 3 seconds if any request come in this page, so get the updated data after every 3 seconds****
+    };
 }
+
+//not useful for my case
+// export async function getServerSideProps(context){ //****this will be run on the server after deployment in every incoming request on the fly****
+//     //****8this function only work in the server, never client-side, so can useful for credential related matter because it will never expose outside the world*******
+    
+//     const req = context.req; //****this can be useful for authentication staff etc......***
+//     const res = context.res;
+
+//     return {
+//                 props: {
+//                     post: DUMMY_POSTS
+//                 }
+//             };
+// }
