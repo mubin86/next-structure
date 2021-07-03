@@ -12,6 +12,9 @@ export default function MainNavigation() {
                             <Link href='/post'>All Posts</Link>
                         </li>
                         <li> 
+                            <Link href='/post/favourite-post'>My Favourite Post</Link>
+                        </li>
+                        <li> 
                             <Link href='/post/new-post'>Create New Post</Link>
                         </li>
                     </ul>

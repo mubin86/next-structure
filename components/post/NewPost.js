@@ -22,7 +22,7 @@ export default function NewPost({newPostHandler}) {
         return (
         <div className="min-h-screen flex items-center rounded justify-center bg-blu-400">
 
-            <div className="bg-white p-16 rounded shadow-2xl w-2/3">
+            <div className="bg-white p-10 rounded shadow-2xl w-2/3">
 
             <h2 className="text-3xl text-center font-bold mb-4 text-purple-800">Create Your Post</h2>
 
