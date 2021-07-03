@@ -1,5 +1,7 @@
 import {MongoClient} from 'mongodb'; //it will included in server side bundle in build time, so no security issue
-// import Link from 'next/link'
+// import Link from 'next/link';
+import {Fragment} from 'react';
+import Head from 'next/head';
 import PostList from '../../components/post/PostList';
 
 
@@ -41,10 +43,19 @@ export default function PostPage({post}) {
         //     </li>
         // </ul>
         // </Fragment>
-
-        <PostList 
-            posts={post}
-        />
+        
+        <Fragment>
+            <Head> 
+                <title>All the Post</title>
+                <meta name="description" 
+                        content="All the Post is available from all of your network"
+                />
+            </Head>
+            <PostList 
+                posts={post}
+            />
+        </Fragment>
+        
         
     );
 }

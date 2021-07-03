@@ -1,4 +1,6 @@
 import {useRouter} from 'next/router';
+import {Fragment} from 'react';
+import Head from 'next/head';
 import {MongoClient, ObjectId} from 'mongodb';
 import PostDetail from '../../../components/post/PostDetail';
 import PostItem from '../../../components/post/PostItem';
@@ -14,11 +16,20 @@ export default function SinglePost({postData}) {
         //     postTitle={"postTitle DEMO"}
         //     postDescription={"postDescription DEMOOOOOOOO OOOOOOOOOOO OOOOO"}
         // />
-        <PostDetail 
-            postId={postData.postId}
-            postTitle={postData.postTitle}
-            postDescription={postData.postDescription}
-        />
+
+        <Fragment>
+            <Head> 
+                <title>Single Post</title>
+                <meta name="description" 
+                        content="View a Post in Detailss"
+                />
+            </Head>
+            <PostDetail 
+                postId={postData.postId}
+                postTitle={postData.postTitle}
+                postDescription={postData.postDescription}
+            />
+        </Fragment>
     )
 }
 
