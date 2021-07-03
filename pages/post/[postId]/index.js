@@ -19,9 +19,9 @@ export default function SinglePost({postData}) {
 
         <Fragment>
             <Head> 
-                <title>Single Post</title>
+                <title>{postData.postTitle}</title>
                 <meta name="description" 
-                        content="View a Post in Detailss"
+                    content={postData.postDescription}
                 />
             </Head>
             <PostDetail 

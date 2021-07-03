@@ -62,7 +62,7 @@ export default function PostPage({post}) {
 
 //specially useful for personal blog related project
 export async function getStaticProps(context) { //works on build time //**this will pre genrate a HTML file and stored and served by a CDN so it is realtively faster// 
-    console.log("hello from get static props", context);
+    //console.log("hello from get static props", context);
 
     //****fetch('/api/posts',)  //we can send the request but instead of sending a request we can do the task directly here, so it will reduce the unenecessary request***
 
