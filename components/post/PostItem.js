@@ -17,7 +17,10 @@ export default function PostItem({postId, title, description}) {
                 <h2 className="text-gray-800 text-3xl font-semibold">{title} and _id is {postId}</h2>
                 {/* <p className="mt-2 text-gray-600">{description}</p> */}
             </div>
-            <div className="flex justify-end mt-4">
+            <div className="flex justify-start mt-4">
+                <a href="#" className="text-xl font-medium text-indigo-500">Add to Favourites</a>
+            </div>
+            <div className="flex justify-end -mt-7">
                 <a href="#" className="text-xl font-medium text-indigo-500">John Doe</a>
             </div>
             
