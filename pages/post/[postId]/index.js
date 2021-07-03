@@ -24,7 +24,7 @@ export default function SinglePost({postData}) {
 export async function getStaticPaths(){ //**works for dynamic content***defines all the postIds for which the getstaticprops will pregenrate page content, if we put a postId out of this scope we will get a 404***
     return {
         fallback: false, //false means if a user entered postId 5(out of this below scope) he will get a 404 and 
-        //true means ther can be any other postId and therefore, in that case nextjs will try to genrate that postId on the server on the fly
+                         //true means ther can be any other postId and therefore, in that case nextjs will try to genrate that postId on the server on the fly
         paths: [
             {
                 params: {
@@ -42,7 +42,7 @@ export async function getStaticPaths(){ //**works for dynamic content***defines 
 }
 
 export async function getStaticProps(context) { //this means this page is pre genrated during the build process//
-    console.log("context from specific post is", context);
+    //console.log("context from specific post is", context);
     const postId = context.params.postId;
     return {
         props: {
