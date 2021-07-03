@@ -3,23 +3,23 @@ import {MongoClient} from 'mongodb'; //it will included in server side bundle in
 import PostList from '../../components/post/PostList';
 
 
-const DUMMY_POSTS = [
-    {
-        id: 3,
-        title: "first title",
-        description: "this is the first description........."
-    },
-    {
-        id: 4,
-        title: "second title",
-        description: "this is the second description........."
-    },
-    {
-        id: 5,
-        title: "third title",
-        description: "this is the third description........."
-    }
-];
+// const DUMMY_POSTS = [
+//     {
+//         id: 3,
+//         title: "first title",
+//         description: "this is the first description........."
+//     },
+//     {
+//         id: 4,
+//         title: "second title",
+//         description: "this is the second description........."
+//     },
+//     {
+//         id: 5,
+//         title: "third title",
+//         description: "this is the third description........."
+//     }
+// ];
 
 export default function PostPage({post}) {
     return (

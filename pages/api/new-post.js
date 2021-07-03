@@ -1,5 +1,5 @@
 // /api/new-post **//these are the server-side code
-import {MongoClient} from 'mongodb'
+import {MongoClient} from 'mongodb';
 
 const handler = async (req, res) => {
 
