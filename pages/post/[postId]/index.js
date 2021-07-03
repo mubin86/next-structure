@@ -35,6 +35,11 @@ export async function getStaticPaths(){ //**works for dynamic content***defines 
                 params: {
                     postId: '4'
                 }
+            },
+            {
+                params: {
+                    postId: '5'
+                }
             }
         ],
         

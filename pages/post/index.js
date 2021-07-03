@@ -12,6 +12,11 @@ const DUMMY_POSTS = [
         id: 4,
         title: "second title",
         description: "this is the second description........."
+    },
+    {
+        id: 5,
+        title: "third title",
+        description: "this is the third description........."
     }
 ];
 
