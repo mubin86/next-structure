@@ -1,9 +1,11 @@
-import { Fragment } from 'react'
+
+import {useRouter} from 'next/router';
 import axios from 'axios';
 import NewPost from '../../../components/post/NewPost'
 
 
 export default function NewPostPage() {
+    const router = useRouter();
 
     const newPostHandler = async (postData) => {
             console.log("postData is",postData);
@@ -17,10 +19,11 @@ export default function NewPostPage() {
                 },
             });
 
-            const data = await response.json();
-            console.log("response data is". data);
-    }
+            console.log("response from api is", response.data);
+          //  const data = await response.data.json(); ///***WIP: ERROR OCCURING-> MINOR */
 
+            router.push('/post');
+    }
 
     return (
             <NewPost 
