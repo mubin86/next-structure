@@ -59,7 +59,7 @@ export async function getStaticProps(context) { //works on build time //**this w
     const db = client.db();
     const postCollection = db.collection('posts');
 
-    const posts = await postCollection.find().toArray();
+    const posts = await postCollection.find().sort( { createdAt: -1 } ).toArray();
 
     client.close();
 

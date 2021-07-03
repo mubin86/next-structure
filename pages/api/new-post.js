@@ -10,7 +10,12 @@ const handler = async (req, res) => {
             const client = await MongoClient.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.gjv0d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
             const db = client.db();
             const postCollection = db.collection('posts');
-            const result = await postCollection.insertOne(req.body);
+    
+            const result = await postCollection.insertOne({
+                ...req.body,
+                createdAt: Date.now(),
+                upadtedAt: Date.now()
+            });
             console.log("created post is ", result);
             client.close();
 
