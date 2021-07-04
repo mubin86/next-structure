@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function PostItem({postId, title, description}) {
@@ -18,7 +19,7 @@ export default function PostItem({postId, title, description}) {
                 {/* <p className="mt-2 text-gray-600">{description}</p> */}
             </div>
             <div className="flex justify-start mt-4">
-                <a href="#" className="text-xl font-medium text-indigo-500">Add to Favourites</a>
+                <Link href={`/post/favourite-post/${postId}`} className="text-xl font-medium text-indigo-500">Add to Favourites</Link>
             </div>
             <div className="flex justify-end -mt-7">
                 <a href="#" className="text-xl font-medium text-indigo-500">John Doe</a>
