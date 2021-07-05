@@ -1,13 +1,12 @@
 import {MongoClient, ObjectId} from 'mongodb';
-import {useRouter} from 'next/router';
 
 
 const favouritePostHandler = async (req, res) => {
 
     try {
-
         if(req.method === 'PATCH'){
-            const {id} = req.params;
+            console.log("req.body is", req.body);
+            const {id} = req.query;
             console.log("favourite post id is", id);
             // console.log("process.env.DB_USER",process.env.DB_USER);
             const client = await MongoClient.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.gjv0d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
@@ -18,11 +17,11 @@ const favouritePostHandler = async (req, res) => {
                 _id: ObjectId(id)
             };
     
-            const result = await postCollection.updateOne(query, req.body);
-            console.log("created post is ", result);
+            const result = await postCollection.findOneAndUpdate(query, { $set: req.body});
+            console.log("updated result is", result.value);
             client.close();
 
-            res.status(201).json({
+            return res.status(200).json({
                 message: "favourite Post added",
                 result
             });

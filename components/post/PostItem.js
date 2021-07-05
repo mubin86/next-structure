@@ -9,10 +9,12 @@ export default function PostItem({postId, title, description}) {
         router.push('/post/' + postId);
     }
 
-    const addFavouriteHandler = async () => {
+    const addFavouriteHandler = async (postId) => {
+        console.log("postId before update calling", postId)
             const response = await axios({
                 method: 'PATCH',
-                url: '/api/create-favourite-post/'+ postId,
+                url: `/api/create-favourite-post?id=${postId}`,
+                // params: { id: postId },
                 data: JSON.stringify({favourite: true}),
                 headers: {
                     'Content-Type': 'application/json'
@@ -37,7 +39,7 @@ export default function PostItem({postId, title, description}) {
             </div>
             <div className="flex justify-start mt-4">
                 {/* <Link href={`/post/favourite-post/${postId}`} className="text-xl font-medium text-indigo-500">Add to Favourites</Link> */}
-                <button onClick={addFavouriteHandler} className="text-xl font-medium text-indigo-500">Add to Favourites</button>
+                <button onClick={()=>{addFavouriteHandler(postId)}} className="text-xl font-medium text-indigo-500">Add to Favourites</button>
             </div>
             <div className="flex justify-end -mt-7">
                 <a href="#" className="text-xl font-medium text-indigo-500">Mubin</a>
