@@ -1,11 +1,28 @@
 
 import Link from 'next/link';
+import axios from 'axios';
 import { useRouter } from 'next/router';
 
 export default function PostItem({postId, title, description}) {
     const router = useRouter();
     const showDetailsHandler = () => {
         router.push('/post/' + postId);
+    }
+
+    const addFavouriteHandler = async () => {
+            const response = await axios({
+                method: 'PATCH',
+                url: '/api/create-favourite-post/'+ postId,
+                data: JSON.stringify({favourite: true}),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
+
+            console.log("response from favourite api is", response.data);
+          //  const data = await response.data.json(); ///***WIP: ERROR OCCURING-> MINOR */
+
+            router.push('post/');
     }
 
     return (
@@ -19,10 +36,11 @@ export default function PostItem({postId, title, description}) {
                 {/* <p className="mt-2 text-gray-600">{description}</p> */}
             </div>
             <div className="flex justify-start mt-4">
-                <Link href={`/post/favourite-post/${postId}`} className="text-xl font-medium text-indigo-500">Add to Favourites</Link>
+                {/* <Link href={`/post/favourite-post/${postId}`} className="text-xl font-medium text-indigo-500">Add to Favourites</Link> */}
+                <button onClick={addFavouriteHandler} className="text-xl font-medium text-indigo-500">Add to Favourites</button>
             </div>
             <div className="flex justify-end -mt-7">
-                <a href="#" className="text-xl font-medium text-indigo-500">John Doe</a>
+                <a href="#" className="text-xl font-medium text-indigo-500">Mubin</a>
             </div>
             
             <div className="flex justify-end mt-4">
