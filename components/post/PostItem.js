@@ -9,13 +9,13 @@ export default function PostItem({postId, title, description, favourite}) {
         router.push('/post/' + postId);
     }
 
-    const addFavouriteHandler = async (postId) => {
+    const addOrRemoveHandler = async (postId) => {
         console.log("postId before update calling", postId)
             const response = await axios({
                 method: 'PATCH',
                 url: `/api/create-favourite-post?id=${postId}`,
                 // params: { id: postId },
-                data: JSON.stringify({favourite: true}),
+                data: JSON.stringify({favourite: favourite ? false : true}),
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -24,7 +24,7 @@ export default function PostItem({postId, title, description, favourite}) {
             console.log("response from favourite api is", response.data);
           //  const data = await response.data.json(); ///***WIP: ERROR OCCURING-> MINOR */
 
-            router.push('post/');
+        favourite ? router.push('/post/favourite-post') :router.push('/post');
     }
 
     return (
@@ -38,14 +38,17 @@ export default function PostItem({postId, title, description, favourite}) {
                 {/* <p className="mt-2 text-gray-600">{description}</p> */}
             </div>
             {
-                favourite ? null : 
+                favourite ?  <div className="flex justify-start mt-4">
+                {/* <Link href={`/post/favourite-post/${postId}`} className="text-xl font-medium text-indigo-500">Add to Favourites</Link> */}
+                    <button onClick={()=>{addOrRemoveHandler(postId)}} className="text-xl font-medium text-indigo-500">Remove from Favourites</button>
+                </div> : 
                 <div className="flex justify-start mt-4">
                 {/* <Link href={`/post/favourite-post/${postId}`} className="text-xl font-medium text-indigo-500">Add to Favourites</Link> */}
-                    <button onClick={()=>{addFavouriteHandler(postId)}} className="text-xl font-medium text-indigo-500">Add to Favourites</button>
+                    <button onClick={()=>{addOrRemoveHandler(postId)}} className="text-xl font-medium text-indigo-500">Add to Favourites</button>
                 </div>
             }
             
-            <div className={"flex justify-end " + favourite ? "mt-4" : "-mt-7"}>
+            <div className="flex justify-end -mt-7">
                 <a href="#" className="text-xl font-medium text-indigo-500">Mubin</a>
             </div>
             
