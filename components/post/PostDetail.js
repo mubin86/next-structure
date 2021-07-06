@@ -12,7 +12,7 @@ export default function PostDetail({postId, postTitle, postDescription}) {
                 <p className="mt-2 text-gray-600">{postDescription}</p>
             </div>
             <div className="flex justify-end mt-4">
-                <a href="#" className="text-xl font-medium text-indigo-500">John Doe</a>
+                <a href="#" className="text-xl font-medium text-indigo-500">Mubin</a>
             </div>
         </div>
     </div>
