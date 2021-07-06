@@ -3,7 +3,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
-export default function PostItem({postId, title, description}) {
+export default function PostItem({postId, title, description, favourite}) {
     const router = useRouter();
     const showDetailsHandler = () => {
         router.push('/post/' + postId);
@@ -37,11 +37,15 @@ export default function PostItem({postId, title, description}) {
                 <h2 className="text-gray-800 text-3xl font-semibold">{title} and _id is {postId}</h2>
                 {/* <p className="mt-2 text-gray-600">{description}</p> */}
             </div>
-            <div className="flex justify-start mt-4">
+            {
+                favourite ? null : 
+                <div className="flex justify-start mt-4">
                 {/* <Link href={`/post/favourite-post/${postId}`} className="text-xl font-medium text-indigo-500">Add to Favourites</Link> */}
-                <button onClick={()=>{addFavouriteHandler(postId)}} className="text-xl font-medium text-indigo-500">Add to Favourites</button>
-            </div>
-            <div className="flex justify-end -mt-7">
+                    <button onClick={()=>{addFavouriteHandler(postId)}} className="text-xl font-medium text-indigo-500">Add to Favourites</button>
+                </div>
+            }
+            
+            <div className={"flex justify-end " + favourite ? "mt-4" : "-mt-7"}>
                 <a href="#" className="text-xl font-medium text-indigo-500">Mubin</a>
             </div>
             

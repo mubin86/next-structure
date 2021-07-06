@@ -35,6 +35,7 @@ export default function PostPage({post}) {
             </Head>
             <PostList
                 posts={post}
+                favourite={true}
             />
         </Fragment>
         

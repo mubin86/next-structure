@@ -1,7 +1,7 @@
 
 import PostItem from './PostItem'
 
-export default function PostList({posts}) {
+export default function PostList({posts, favourite}) {
     return (
         <div>
             <ul>
@@ -11,6 +11,7 @@ export default function PostList({posts}) {
                         postId={post.id}
                         title={post.title}
                         description={post.description}
+                        favourite={favourite}
                     />
                 ))}
             </ul>
