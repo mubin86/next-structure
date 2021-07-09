@@ -1,15 +1,18 @@
 import Layout from '../components/layout/Layout'
+import {Provider} from 'next-auth/client'
 import '../styles/globals.css'
+import Providers from 'next-auth/providers';
 
 function MyApp({ Component, pageProps }) {
   const n=1;
 
   return (
-    n==1 ?
-    <Layout>
-        <Component {...pageProps} />
-    </Layout>: <Component {...pageProps} />
-
+    <Provider session={pageProps.session}>
+      <Layout>
+          <Component {...pageProps} />
+      </Layout>
+    </Provider>
+    
   )
   
 }
