@@ -4,6 +4,7 @@ import {Fragment} from 'react'
 
 export default function secret({verifySession}) {
     const [session, loading] = useSession();//not used at this moment but will find its useCase
+    //useSession can be used to track session of user and if session we can take certain actions
     return (
         <Fragment>
             {verifySession ? <h2>
@@ -13,9 +14,6 @@ export default function secret({verifySession}) {
         </Fragment>
     )
 }
-
-
-
 
 export async function getServerSideProps(context){ //****this will be run on the server after deployment in every incoming request on the fly****
     //****sthis function only work in the server, never client-side, so can useful for credential related matter because it will never expose outside the world*******
