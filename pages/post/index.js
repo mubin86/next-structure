@@ -82,7 +82,7 @@ export async function getStaticProps(context) { //works on build time //**this w
                 id: post._id.toString()
             }))
         },
-        revalidate: 3 //****regenearted on the server in every 3 seconds if any request come in this page, so get the updated data after every 3 seconds****
+        revalidate: 1 //****regenearted on the server in every 3 seconds if any request come in this page, so get the updated data after every 3 seconds****
     };
 }
 
