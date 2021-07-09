@@ -13,7 +13,7 @@ export default function index(props) {
                   content="Join us and connected with the community"
             />
         </Head>
-        <main className ={}>
+        <main className ={{}}>
             {!session && (
               <div>
                 <h2>Not signed in?</h2>
