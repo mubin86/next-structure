@@ -24,8 +24,9 @@ export default function index(props) {
             )}
             {
               session && (
+                // console.log("email is ",{session.user.email})
                 <div>
-                  Signed in as {session.user.email}
+                  Signed in as {session.user.name}
                   <br />
                   <div>
                     You can now access all the available Posts
