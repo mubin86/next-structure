@@ -7,12 +7,12 @@ const options ={
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET
         }),
-        // Providers.Auth0({
-        //     clientId: process.env.AUTH0_CLIENT_ID,
-        //     clientSecret: process.env.AUTH0_CLIENT_SECRET,
-        //     domain: process.env.AUTH0_CLIENT_DOMAIN,
-        //     // responseType: 'code'
-        // }),
+        Providers.Auth0({
+            clientId: process.env.AUTH0_CLIENT_ID,
+            clientSecret: process.env.AUTH0_CLIENT_SECRET,
+            domain: process.env.AUTH0_CLIENT_DOMAIN,
+            // responseType: 'code'
+        }),
         Providers.Email({
             server: {
                 host: process.env.EMAIL_SERVER_HOST,
